@@ -18,7 +18,7 @@ import org.webrtc.MediaStream;
 import org.webrtc.RendererCommon;
 import org.webrtc.RendererCommon.RendererEvents;
 import org.webrtc.RendererCommon.ScalingType;
-import org.webrtc.SurfaceViewRenderer;
+import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoTrack;
 
 import java.lang.reflect.InvocationTargetException;
@@ -137,7 +137,7 @@ public class WebRTCView extends ViewGroup {
      * The {@link View} and {@link VideoSink} implementation which
      * actually renders {@link #videoTrack} on behalf of this instance.
      */
-    private final SurfaceViewRenderer surfaceViewRenderer;
+    private final TextureViewRenderer surfaceViewRenderer;
 
     /**
      * The {@code VideoTrack}, if any, rendered by this {@code WebRTCView}.
@@ -147,7 +147,7 @@ public class WebRTCView extends ViewGroup {
     public WebRTCView(Context context) {
         super(context);
 
-        surfaceViewRenderer = new SurfaceViewRenderer(context);
+        surfaceViewRenderer = new TextureViewRenderer(context);
         addView(surfaceViewRenderer);
 
         setMirror(false);
